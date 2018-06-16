@@ -1,0 +1,24 @@
+extends layout
+block content
+    
+    form(method='POST',action='/login')
+        .row
+            h4.center Admin Login
+                
+            
+        .col.s6
+           
+            .row
+                .input-field.col.s12
+                    label Username:
+                    input.form-control(name='username',type='text')
+            .row
+                .input-field.col.s12
+                    label Password
+                    input.form-control(name='password',type='password')
+           
+            .row
+                .input-field.col.s12
+                    
+                    button.btn.center(type="submit") Submit
+                    //- a.btn.right(href="/register") Register

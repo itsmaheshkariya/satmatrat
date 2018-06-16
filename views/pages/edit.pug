@@ -1,0 +1,43 @@
+extends layout
+block content
+    
+    form(method='POST',action='/satta/edit/'+sattan._id)
+        .row
+            h3 Satta Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Name:
+                    input.form-control(name='name',type='text',value=sattan.name)
+
+            .row
+                .input-field.col.s12
+                    label Number:
+                    input.form-control(name='number',type='text',value=sattan.number)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time
+                    input.form-control(name='time',type='time',value=sattan.time)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Date
+                    input.form-control(name='date',type='date',value=sattan.date)
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

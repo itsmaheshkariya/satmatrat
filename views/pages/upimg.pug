@@ -1,0 +1,66 @@
+extends layout
+block content
+    
+    
+        .row
+            h4.center Update  Media
+            
+        .col.s6
+            form(action="/Upimg/upload",method="POST",enctype="multipart/form-data")
+                .file-field.input-field(id='messages')
+                    .btn
+                        span File
+                        input(type="file",name="file",id="file")
+                    .file-path-wrapper
+                        input.file-path.validate(type="text", placeholder="Upload one or more files")
+
+            
+            
+                .row
+                    .input-field.col.s12
+                    
+                        button.btn(type="submit",onclick="M.toast({html: 'Uploading File...'})") Submit
+            
+        .col.s6
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Image
+                    //- td Date
+                    td Type
+                    //- td Edit
+                    td Delete
+                   
+                
+                each file, i in files
+                    tbody
+                        td
+                            img(class='table-img' src='/Upimg/images/'+file.filename)
+                        //- td= file.uploadDate
+                        td= file.contentType
+                       
+                        //- td
+                        //-     a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom")
+                        //-         i.fa.fa-pencil 
+                        td
+                            form(action='/Upimg/images/'+file.filename+'?_method=DELETE',method='POST')
+                                button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                    i.fa.fa-trash
+                
+            
+                
+          
+        br
+        br
+        br
+        br
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

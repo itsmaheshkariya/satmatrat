@@ -1,0 +1,30 @@
+extends layout
+block content
+    
+    form(method='POST',action='/Settings/edit/'+setting._id)
+        .row
+            h3 Satta Updater 
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Title:
+                    input.form-control(name='message',type='text',value=setting.message)
+            .row
+                .input-field.col.s12
+                    label Message:
+                    textarea.form-control(name='title',type='text')= setting.title
+
+            
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+        .col.s6
+        
+           
+          
+        br
+        br
+        br
+        br

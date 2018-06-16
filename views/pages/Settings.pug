@@ -1,0 +1,49 @@
+extends layout
+block content
+    
+    form(method='POST',action='/Settings')
+        .row
+            h3 Satta Updater 
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Title:
+                    input.form-control(name='message',type='text')
+            .row
+                .input-field.col.s12
+                    label Message:
+                    textarea.form-control(name='title',type='text')
+
+            
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+        .col.s6
+        
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Title
+                    td Message
+                    td Edit
+                    td Delete
+                   
+     
+                each setting, i in settings
+                    tbody
+                        
+                        td= setting.message
+                        td!= setting.title
+                        
+                        td
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/Settings/edit/'+setting._id)
+                                i.fa.fa-pencil 
+                        td
+                            a.btn.btn-dark.delete-article(title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right",data-id=setting._id)
+                                i.fa.fa-trash
+          
+        br
+        br
+        br
+        br

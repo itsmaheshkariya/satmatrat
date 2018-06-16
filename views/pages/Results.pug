@@ -1,0 +1,68 @@
+extends layout
+block content
+    
+    br
+    .collection
+        .row
+            .col.s12
+
+                .row
+                    each setting, j in settings
+                        .card.blue-grey.darken-1
+                            .card-content.white-text
+                                span.card-title!= '<b>'+setting.message+'</b>'
+                                    p!= '<p>'+setting.title+'</p>'
+          
+      
+
+        
+            .col.s12
+
+                a.collection-item.active.center(href="") UPDATE RESULTS
+                each sattan, i in satta
+                    a.collection-item(href='/satta/edit/'+sattan._id)= sattan.name
+                        span(style="float:right")= sattan.number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //- a.collection-item.active.center(href="") UPDATE RESULTS
+        //- a.collection-item(href="#!") TIME BAZAR 
+        //- a.collection-item(href="#!") TARA MUMBAI DAY
+        //- a.collection-item(href="#!") BOMBY RAJSHREE DAY 
+        //- a.collection-item(href="#!") RAJDHANI DAY
+        //- a.collection-item(href="#!") KALYAN 
+        //- a.collection-item(href="#!") NEW WORLI 
+        //- a.collection-item(href="#!") TARA MUMBAI NIGHT 
+        //- a.collection-item(href="#!") NIGHT TIME BAZAR 
+        //- a.collection-item(href="#!") MILAN NIGHT 
+        //- a.collection-item(href="#!") SUPER RATAN 
+        //- a.collection-item(href="#!") MAIN MUMBAI 
+        //- a.collection-item(href="#!") CENTRAL BOMBAY
+        //- a.collection-item(href="#!") BOMBY RAJSHREE NIGHT
+        //- a.collection-item(href="#!") AKOLA PRABHAT NIGHT
+        //- a.collection-item(href="#!") GOLDEN DAY
+        //- a.collection-item(href="#!") GOLDEN NIGHT
+        //- a.collection-item(href="#!") SURAJ DAY
+        //- a.collection-item(href="#!") SURAJ NIGHT 
+        //- a.collection-item(href="#!") LOKMAT DAY 
+        //- a.collection-item(href="#!") AMBER DAY 
+        //- a.collection-item(href="#!") GOWA DAY 
+        //- a.collection-item(href="#!") COTTON 
+        //- a.collection-item(href="#!") ONE 2 TIME 
+        

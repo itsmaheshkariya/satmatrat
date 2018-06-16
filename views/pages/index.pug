@@ -1,0 +1,71 @@
+extends layout
+block content
+    
+    form(method='POST',action='/satta')
+        .row
+            h4 Update  
+            
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Name:
+                    input.form-control(name='name',type='text')
+
+            .row
+                .input-field.col.s12
+                    label Number:
+                    input.form-control(name='text',type='text')
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time
+                    input.form-control(name='time',type='time')
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Date
+                    input.form-control(name='date',type='date')
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+            
+        .col.s6
+        
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Name
+                    td Number
+                    td Time
+                    td Date
+                    td Edit
+                    td Delete
+                   
+     
+                each sattan, i in satta
+                    tbody
+                        td= sattan.name
+                        td= sattan.number
+                        td= sattan.time
+                        td= sattan.date
+                        td
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/satta/edit/'+sattan._id)
+                                i.fa.fa-pencil 
+                        td
+                            a.btn.btn-dark.delete-article(title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right",data-id=sattan._id)
+                                i.fa.fa-trash
+                
+          
+        br
+        br
+        br
+        br
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

@@ -1,0 +1,113 @@
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Roboto")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css")
+        link(rel="stylesheet" href="/css/main.css")
+        
+        
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js")
+        
+        
+        
+            
+
+		
+
+
+    body
+        nav
+            .nav-wrapper
+                a.brand-logo.center.logo(href="/") Satmatrat
+                a.sidenav-trigger(href="#" data-target="mobile-demo")
+                    i.material-icons =
+                ul.right.hide-on-med-and-down
+                    if user
+                        li
+                            a(href="/") Home
+                     
+                        li
+                            a(href="/Results") Results
+                        //- li
+                        //-     a(href="/Astrology") Astrology 
+                        li
+                            a(href="/Charts") Charts
+                        li
+                            a(href="/Settings") Settings
+                        li
+                            a(href="/Upimg") Media
+                    
+                        li
+                            a(href="/logout") Logout
+                    else
+                        //- li
+                        //-     a(href="/register") Register
+                        //- li
+                        //-     a(href="/login") Login
+                    
+   
+               
+            ul#mobile-demo.sidenav
+                if user
+                    li
+                            a(href="/") Home
+                    li
+                        a(href="/Results") Results
+                    //- li
+                    //-     a(href="/Astrology") Astrology 
+                    li
+                        a(href="/Charts") Charts
+                    li
+                        a(href="/Settings") Settings
+                    li
+                            a(href="/Upimg") Media
+                else
+                    li
+                            a(href="/login") Login
+    
+                    
+                    
+                       
+    
+    
+    
+  
+    
+
+              
+
+
+  
+        .container
+            != messages('pages/message')
+            
+            block content
+           
+            
+            footer
+                
+                script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+                script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js")
+                script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js")
+                script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
+                script(src="https://cdn.firebase.com/js/client/2.2.2/firebase.js")
+                script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js")
+                script(src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js")
+                script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-animate.min.js")
+                script(src="https://cloud.tinymce.com/stable/tinymce.min.js")
+                
+                script.
+                    tinymce.init({ selector:'textarea' });
+                script(src='/js/main.js')
+                
+                script.
+                    document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.sidenav');
+                    var instances = M.Sidenav.init(elems, options);
+                    });
+                    
+                    $(document).ready(function(){
+                    $('.sidenav').sidenav();
+                    });
